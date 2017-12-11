@@ -37,13 +37,13 @@ class Artist
   end
 
   def self.find(name)
-    @@all.find { |artist| artist.name == name }
+    self.all.find { |artist| artist.name == name } #.find is returning the first object it finds
   end
 
   def self.create(name)
     artist = self.new(name) #{ |artist| artist.save }
-    artist.save
-    artist
+    artist.save #just saves... doesnt return anything
+    artist #you need to return the value for this helper method to work
   end
 
   def print_songs
